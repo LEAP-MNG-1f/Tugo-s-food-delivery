@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Header } from "./components/header/Header";
+import { Card } from "./components/header/Card";
 
 export default function Home() {
   const [tuuguu, setTuuguu] = useState("");
@@ -24,6 +25,8 @@ export default function Home() {
     <div>
       <div>
         <Header />
+        <Card img="Zurag" title="Hool" price={5000} discount={20} />
+        <Card img="Zurag" title="Hool" price={10000} />
       </div>
       <div>{tuuguu}</div>
     </div>
