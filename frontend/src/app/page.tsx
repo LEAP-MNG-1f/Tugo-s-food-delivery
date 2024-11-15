@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { Header } from "./components/header/Header";
 
 export default function Home() {
   const [tuuguu, setTuuguu] = useState("");
@@ -21,6 +22,9 @@ export default function Home() {
 
   return (
     <div>
+      <div>
+        <Header />
+      </div>
       <div>{tuuguu}</div>
     </div>
   );
