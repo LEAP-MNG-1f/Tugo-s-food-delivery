@@ -16,6 +16,7 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "Food Delivery",
   description: "Welcome to our Food delivery service",
+  icons: { icon: "/Favicon.ico" },
 };
 
 export default function RootLayout({
