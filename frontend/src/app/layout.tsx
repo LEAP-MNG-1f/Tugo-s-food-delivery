@@ -29,10 +29,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased px-[100px]`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Header />
+        <div className="px-[100px]">
+          <Header />
+        </div>
         {children}
+        <img
+          className="absolute w-full h-[550px] "
+          src="background.png"
+          alt=""
+        />
         <Footer />
       </body>
     </html>

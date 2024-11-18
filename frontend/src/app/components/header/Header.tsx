@@ -1,6 +1,6 @@
 export const Header = () => {
   return (
-    <div className="grid grid-cols-2 items-center gap-[500px]">
+    <div className="grid grid-cols-2 items-center">
       <div className="flex items-center gap-10">
         <img width={40} src="./pineconeLogo.png" alt="" />
         <div className="font-semibold text-center">НҮҮР</div>
