@@ -1,6 +1,13 @@
 export const Footer = () => {
   return (
-    <div className="flex flex-col bg-green-600 h-[550px] text-white ">
+    <div
+      className="flex flex-col bg-green-600 h-[550px] text-white "
+      style={{
+        backgroundImage: "url(/background.png)",
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+      }}
+    >
       <div className="flex flex-col items-center justify-center mt-[100px] gap-10 z-10">
         <div className="flex items-center gap-3">
           <img width={50} src="./pineconeLogoWhite.png" alt="" />

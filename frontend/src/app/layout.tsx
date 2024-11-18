@@ -35,11 +35,6 @@ export default function RootLayout({
           <Header />
         </div>
         {children}
-        <img
-          className="absolute w-full h-[550px] "
-          src="background.png"
-          alt=""
-        />
         <Footer />
       </body>
     </html>
