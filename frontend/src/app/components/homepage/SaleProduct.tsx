@@ -9,13 +9,33 @@ export const SaleProduct = () => {
           <img width={25} src="./frontoftitle.png" alt="" />
           Хямдралтай
         </div>
-        <Button title="Бүгдийг харах →" route="sale-products" />
+        <Button title="Бүгдийг харах →" route="sale-products" text="green" />
       </div>
       <div className="flex gap-10">
-        <Card img="./product.png" title="Tsuivan" price={15000} discount={50} />
-        <Card img="./product.png" title="Tsuivan" price={15000} discount={50} />
-        <Card img="./product.png" title="Tsuivan" price={15000} discount={50} />
-        <Card img="./product.png" title="Tsuivan" price={15000} discount={50} />
+        <Card
+          img="./product.png"
+          title="Tsuivan"
+          price={15000}
+          discount="50%"
+        />
+        <Card
+          img="./product.png"
+          title="Tsuivan"
+          price={15000}
+          discount="50%"
+        />
+        <Card
+          img="./product.png"
+          title="Tsuivan"
+          price={15000}
+          discount="50%"
+        />
+        <Card
+          img="./product.png"
+          title="Tsuivan"
+          price={15000}
+          discount="50%"
+        />
       </div>
     </div>
   );

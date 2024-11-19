@@ -4,6 +4,9 @@ import { useEffect, useState } from "react";
 import { HomeNuurZurag } from "./components/homepage/HomeNuurZurag";
 import { BusinessInfo } from "./components/homepage/BusinessInfo";
 import { SaleProduct } from "./components/homepage/SaleProduct";
+import { MainProduct } from "./components/homepage/MainProduct";
+import { Salad } from "./components/homepage/Salad";
+import { Desert } from "./components/homepage/Desert";
 
 export default function Home() {
   const [tuuguu, setTuuguu] = useState("");
@@ -26,7 +29,13 @@ export default function Home() {
     <main className="">
       <HomeNuurZurag />
       <BusinessInfo />
-      <SaleProduct />
+      <div className="flex flex-col gap-10 py-10">
+        <SaleProduct />
+        <MainProduct />
+        <Salad />
+        <Desert />
+      </div>
+
       <div>{tuuguu}</div>
     </main>
   );

@@ -4,12 +4,13 @@ import Link from "next/link";
 type TitleandRoute = {
   title: string;
   route: string;
+  text?: "green";
 };
 
 export const Button = (props: TitleandRoute) => {
   return (
     <Link href={`/${props.route}`}>
-      <button className="text-green-500">{props.title}</button>
+      <button style={{ color: props.text }}>{props.title}</button>
     </Link>
   );
 };
