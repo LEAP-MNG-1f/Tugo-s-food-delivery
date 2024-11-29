@@ -3,7 +3,7 @@ import Link from "next/link";
 
 type TitleandRoute = {
   title: string;
-  route: string;
+  route?: string;
   text?: "green";
 };
 

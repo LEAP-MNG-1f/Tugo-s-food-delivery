@@ -3,10 +3,7 @@
 import { useEffect, useState } from "react";
 import { HomeNuurZurag } from "./components/homepage/HomeNuurZurag";
 import { BusinessInfo } from "./components/homepage/BusinessInfo";
-import { SaleProduct } from "./components/homepage/SaleProduct";
-import { MainProduct } from "./components/homepage/MainProduct";
-import { Salad } from "./components/homepage/Salad";
-import { Desert } from "./components/homepage/Desert";
+import { MainProductComp } from "./components/homepage/SaleProduct";
 
 export default function Home() {
   const [tuuguu, setTuuguu] = useState("");
@@ -30,10 +27,10 @@ export default function Home() {
       <HomeNuurZurag />
       <BusinessInfo />
       <div className="flex flex-col gap-10 py-10">
-        <SaleProduct />
-        <MainProduct />
-        <Salad />
-        <Desert />
+        <MainProductComp title="Хямдралтай" router="sale-products" />
+        <MainProductComp title="Үндсэн хоол" router="menu" />
+        <MainProductComp title="Салад ба зууш" router="menu" />
+        <MainProductComp title="Амттан" router="menu" />
       </div>
 
       <div>{tuuguu}</div>

@@ -9,11 +9,11 @@ type CardPropsTypezaay = {
 export const Card = (props: CardPropsTypezaay) => {
   return (
     <div>
-      <p className="absolute pl-6 pt-5">
+      <div className="absolute pl-6 pt-5">
         <div className="bg-green-600 px-2 text-white border-2 rounded-2xl">
           {props.discount}
         </div>
-      </p>
+      </div>
       <img className="" height={100} src={props.img} alt="" />
       <p className="font-semibold text-lg">{props.title}</p>
       <p className="text-green-500 font-semibold">{props.price}₮</p>
