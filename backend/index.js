@@ -1,17 +1,28 @@
 import express from "express";
 import cors from "cors";
-import connectDB from "./connectDB.js";
-import { ObjectId } from "mongodb";
 import mongoose from "mongoose";
 import bodyParser from "body-parser";
+import { configDotenv } from "dotenv";
+import foodRouter from "./routes/foodRouter.js";
+configDotenv();
 
-mongoose.connect(process.env.NEX_PUBLIC_MONGODB_URL);
+mongoose.connect(
+  "mongodb+srv://Hustle999:Tujin%40247@turshilt.5ucoe.mongodb.net/"
+);
 
 const server = express();
 const PORT = 8000;
-
-server.use(bodyParser.json());
 server.use(cors());
+server.use(bodyParser.json());
+
+// server.use("/api", userRouter);
+server.use("/api", foodRouter);
+// server.use("api", orderRouter);
+// server.use("/api", categoryRouter);
+
+server.listen(PORT, () => {
+  console.log(`http://localhost:${PORT} deer backend ajillaj bn`);
+});
 
 // server.get("/get-products", async (req, res) => {
 //   const db = await connectDB();
@@ -77,7 +88,3 @@ server.use(cors());
 // server.get("/", (req, res) => {
 //   res.json(["Tugo"]);
 // });
-
-server.listen(PORT, () => {
-  console.log(`http://localhost:${PORT} deer backend ajillaj bn`);
-});
