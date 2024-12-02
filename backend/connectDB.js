@@ -2,8 +2,7 @@ import { configDotenv } from "dotenv";
 import { MongoClient } from "mongodb";
 configDotenv();
 
-const connectionString =
-  "mongodb+srv://ace12d192:wap3TZLOZeJlgLIq@cluster0.s6jvj.mongodb.net/";
+const connectionString = process.env.NEX_PUBLIC_MONGODB_URL;
 
 const connectDB = async () => {
   const client = new MongoClient(connectionString);
