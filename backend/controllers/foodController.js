@@ -32,8 +32,17 @@ const createBurger = async (request, response) => {
     data: result,
   });
 };
-const getAllFoods = async (request, response) => {
+const getAllPizzas = async (request, response) => {
   const groupedFood = await Pizza.find();
+
+  response.json({
+    success: true,
+    data: groupedFood,
+  });
+};
+
+const getAllBurgers = async (request, response) => {
+  const groupedFood = await Burger.find();
 
   response.json({
     success: true,
@@ -67,9 +76,22 @@ const deleteFood = async (request, response) => {
     data: result,
   });
 };
-const updateFood = async (request, response) => {
-  const result = await Pizza.findByIdAndUpdate("674e8d01a3418f7bef9ee3fb", {
-    name: "pizza2",
+const updatePizza = async (request, response) => {
+  const result = await Pizza.findByIdAndUpdate("674e9513d296a425d478b7b7", {
+    image:
+      "https://goldbelly.imgix.net/uploads/showcase_media_asset/image/133398/choose-your-own-deep-dish-pizza-3-pack.4111791511244a4946bb5c9ad2c17da9.jpg?ixlib=react-9.0.2&auto=format&ar=1%3A1",
+  });
+
+  response.json({
+    success: true,
+    data: result,
+  });
+};
+
+const updateBurger = async (request, response) => {
+  const result = await Burger.findByIdAndUpdate("674e97e24e959a2a11ac5d0f", {
+    image:
+      "https://goldbelly.imgix.net/uploads/showcase_media_asset/image/96214/goldbelly-burger-blend-1-lb.13a21b66edf7173a59c75c3a6d2f981b.jpg?ixlib=react-9.0.2&auto=format&ar=1%3A1",
   });
 
   response.json({
@@ -79,10 +101,12 @@ const updateFood = async (request, response) => {
 };
 
 export {
-  getAllFoods,
   createPizza,
   createBurger,
+  getAllPizzas,
+  getAllBurgers,
   deleteFood,
-  updateFood,
+  updatePizza,
+  updateBurger,
   getCategorizedFoods,
 };
