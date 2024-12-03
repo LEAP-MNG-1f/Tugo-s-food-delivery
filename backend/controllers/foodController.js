@@ -1,13 +1,30 @@
-import { Food } from "../model/food.js";
+import { Burger } from "../model/burger.js";
+import { Pizza } from "../model/pizza.js";
 
-const createFood = async (request, response) => {
-  const result = await Food.create({
-    name: "dessert 8",
+const createPizza = async (request, response) => {
+  const result = await Pizza.create({
+    name: "pizza4",
     image:
-      "https://manzushir.com/application/modules/itemmanage/assets/images/big/ae88226e-b258-4e65-aca5-58813ed9ab62.jpeg",
-    ingredient: "Хулуу, төмс, лууван , сонгино, цөцгийн тос, самрын үр  ",
-    price: 25000,
-    categoryId: "674421b0bda2639d243e3cdf",
+      "https://goldbelly.imgix.net/uploads/showcase_media_asset/image/134862/shake-shack-shackburger-8-pack.973a5e26836ea86d7e86a327becea2b0.png?ixlib=react-9.0.2&auto=format&ar=1%3A1",
+    ingredient:
+      "salad, tomato, cheese, meat, bun, onion, bacon, sauce, cucumber, sauce",
+    price: 24999,
+  });
+
+  response.json({
+    success: true,
+    data: result,
+  });
+};
+
+const createBurger = async (request, response) => {
+  const result = await Burger.create({
+    name: "burger4",
+    image:
+      "https://goldbelly.imgix.net/uploads/showcase_media_asset/image/131436/le-big-matt-kit-for-6.1ddae6e382bb3218eeb0fd5247de115a.jpg?ixlib=react-9.0.2&auto=format&ar=1%3A1",
+    ingredient:
+      "milk, cheese, butter, flour, garlic, red pepper, onion, green pepper",
+    price: 24999,
   });
 
   response.json({
@@ -16,23 +33,7 @@ const createFood = async (request, response) => {
   });
 };
 const getAllFoods = async (request, response) => {
-  const groupedFood = await Food.aggregate([
-    {
-      $lookup: {
-        from: "categories", // Assuming your categories collection is named 'categories'
-        localField: "categoryId",
-        foreignField: "_id",
-        as: "category",
-      },
-    },
-    { $unwind: "$category" },
-    {
-      $group: {
-        _id: "$category.name",
-        items: { $push: "$$ROOT" },
-      },
-    },
-  ]);
+  const groupedFood = await Pizza.find();
 
   response.json({
     success: true,
@@ -42,7 +43,7 @@ const getAllFoods = async (request, response) => {
 
 const getCategorizedFoods = async (request, response) => {
   const { selectedCategory } = request.query;
-  const result = await Food.find().populate("categoryId");
+  const result = await Pizza.find().populate("categoryId");
 
   const categorizedFoods = result.filter((foods) => {
     if (foods?.categoryId.name === selectedCategory) {
@@ -57,17 +58,7 @@ const getCategorizedFoods = async (request, response) => {
 };
 
 const deleteFood = async (request, response) => {
-  const result = await Food.findOneAndDelete({
-    name: "dessert 8",
-  });
-
-  response.json({
-    success: true,
-    data: result,
-  });
-};
-const updateFood = async (request, response) => {
-  const result = await Food.findByIdAndUpdate({
+  const result = await Pizza.findOneAndDelete({
     _id: "",
   });
 
@@ -76,5 +67,22 @@ const updateFood = async (request, response) => {
     data: result,
   });
 };
+const updateFood = async (request, response) => {
+  const result = await Pizza.findByIdAndUpdate("674e8d01a3418f7bef9ee3fb", {
+    name: "pizza2",
+  });
 
-export { getAllFoods, createFood, deleteFood, updateFood, getCategorizedFoods };
+  response.json({
+    success: true,
+    data: result,
+  });
+};
+
+export {
+  getAllFoods,
+  createPizza,
+  createBurger,
+  deleteFood,
+  updateFood,
+  getCategorizedFoods,
+};

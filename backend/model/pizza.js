@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const foodSchema = new mongoose.Schema({
+const PizzaSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
@@ -17,11 +17,6 @@ const foodSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  categoryId: {
-    type: mongoose.SchemaTypes.ObjectId,
-    ref: "Category",
-    required: true,
-  },
 });
 
-export const Food = mongoose.model("Food", foodSchema);
+export const Pizza = mongoose.model("Pizza", PizzaSchema);

@@ -1,18 +1,24 @@
 import express from "express";
 import {
-  createFood,
   getAllFoods,
   updateFood,
-  getCategorizedFoods,
+  deleteFood,
+  createPizza,
+  createBurger,
 } from "../controllers/foodController.js";
-import { deleteFood } from "../controllers/foodController.js";
 
-const foodRouter = express.Router();
+export const pizzaRouter = express.Router();
 
-foodRouter.get("/foods", getAllFoods);
-foodRouter.get("/categorized", getCategorizedFoods);
-foodRouter.post("/foods", createFood);
-foodRouter.delete("/foods", deleteFood);
-foodRouter.put("/foods", updateFood);
+pizzaRouter.get("/food/pizzas", getAllFoods);
+pizzaRouter.post("/food/pizza", createPizza);
+pizzaRouter.delete("/food/pizza", deleteFood);
+pizzaRouter.put("/food/pizza", updateFood);
 
-export default foodRouter;
+export const burgerRouter = express.Router();
+
+burgerRouter.get("/food/burgers", getAllFoods);
+burgerRouter.post("/food/burger", createBurger);
+burgerRouter.delete("/food/burger", deleteFood);
+burgerRouter.put("/food/burger", updateFood);
+
+export default { pizzaRouter, burgerRouter };
