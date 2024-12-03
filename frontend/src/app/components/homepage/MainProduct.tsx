@@ -1,4 +1,4 @@
-import { Button } from "../Button";
+import { ButtonRoute } from "../ButtonRoute";
 import { Card } from "../Card";
 
 export const MainProduct = () => {
@@ -9,7 +9,7 @@ export const MainProduct = () => {
           <img width={25} src="./frontoftitle.png" alt="" />
           Үндсэн хоол
         </div>
-        <Button title="Бүгдийг харах →" route="menu" text="green" />
+        <ButtonRoute title="Бүгдийг харах →" route="menu" text="green" />
       </div>
       <div className="flex gap-10">
         <Card img="./product.png" title="Tsuivan" price={15000} />

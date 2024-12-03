@@ -7,7 +7,7 @@ type TitleandRoute = {
   text?: "green";
 };
 
-export const Button = (props: TitleandRoute) => {
+export const ButtonRoute = (props: TitleandRoute) => {
   return (
     <Link href={`/${props.route}`}>
       <button style={{ color: props.text }}>{props.title}</button>

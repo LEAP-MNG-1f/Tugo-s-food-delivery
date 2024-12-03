@@ -1,4 +1,4 @@
-import { Button } from "../Button";
+import { ButtonRoute } from "../ButtonRoute";
 
 export const Footer = () => {
   return (
@@ -16,12 +16,12 @@ export const Footer = () => {
           <div className=" font-bold text-2xl">Food Delivery</div>
         </div>
         <div className="flex justify-between w-full px-[100px] text-xl">
-          <Button title="Нүүр" route="/" />
-          <Button title="Холбоо барих" route="contact-us" />
-          <Button title="Хоолны цэс" route="menu" />
-          <Button title="Үйлчилгээний нөхцөл" route="agreement" />
-          <Button title="Хүргэлтийн бүс" route="service-area" />
-          <Button title="Нууцлалын бодлого" route="privacy" />
+          <ButtonRoute title="Нүүр" route="/" />
+          <ButtonRoute title="Холбоо барих" route="contact-us" />
+          <ButtonRoute title="Хоолны цэс" route="menu" />
+          <ButtonRoute title="Үйлчилгээний нөхцөл" route="agreement" />
+          <ButtonRoute title="Хүргэлтийн бүс" route="service-area" />
+          <ButtonRoute title="Нууцлалын бодлого" route="privacy" />
         </div>
         <div className="flex gap-5">
           <img width={40} src="./facebook.png" alt="" />
