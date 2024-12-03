@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 
 type FoodCardProps = {
-  foods: any[]; // Accepts an array of food items
+  foods?: any[]; // Accepts an array of food items
 };
 
 export const FoodCard = ({ foods }: FoodCardProps) => {

@@ -9,6 +9,7 @@ export default function Home() {
       <BusinessInfo />
       <div className="flex flex-col gap-10 py-10">
         <Food title="Pizza" router="menu" />
+        <Food title="Burger" router="menu" />
       </div>
     </main>
   );

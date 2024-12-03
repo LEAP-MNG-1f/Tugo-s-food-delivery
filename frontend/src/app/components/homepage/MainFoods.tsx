@@ -1,3 +1,5 @@
+"use client";
+import { useEffect, useState } from "react";
 import { ButtonRoute } from "../ButtonRoute";
 import { FoodCard } from "../Card";
 
@@ -20,9 +22,7 @@ export const Food = (props: PizzaProps) => {
           text="green"
         />
       </div>
-      <div>
-        <FoodCard />
-      </div>
+      <FoodCard />
     </div>
   );
 };
