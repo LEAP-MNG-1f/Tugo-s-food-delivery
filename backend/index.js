@@ -3,11 +3,12 @@ import cors from "cors";
 import mongoose from "mongoose";
 import bodyParser from "body-parser";
 import { configDotenv } from "dotenv";
-import { burgerRouter, pizzaRouter } from "./routes/foodRouter.js";
+import foodRouter from "./routes/foodRouter.js";
+import categoryRouter from "./routes/categoryRouter.js";
 configDotenv();
 
 mongoose.connect(
-  "mongodb+srv://Hustle999:Tujin%40247@turshilt.5ucoe.mongodb.net/food"
+  "mongodb+srv://Hustle999:Tujin%40247@turshilt.5ucoe.mongodb.net/food-delivery"
 );
 
 const server = express();
@@ -16,8 +17,8 @@ server.use(cors());
 server.use(bodyParser.json());
 
 // server.use("/api", userRouter);
-server.use("/api", pizzaRouter);
-server.use("/api", burgerRouter);
+server.use("/api", foodRouter);
+server.use("/api", categoryRouter);
 // server.use("api", orderRouter);
 // server.use("/api", categoryRouter);
 
