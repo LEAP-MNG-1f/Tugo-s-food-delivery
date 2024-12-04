@@ -12,7 +12,9 @@ export const MenuPage = () => {
   // Fetch categories data
   const fetchCategories = async () => {
     try {
-      const response = await fetch(`http://localhost:8000/api/categories`);
+      const response = await fetch(
+        `https://backend-of-food-delivery.onrender.com/api/categories`
+      );
       const data = await response.json();
       setCategory(data.data); // Set only the array part of the response
     } catch (error) {
@@ -23,7 +25,9 @@ export const MenuPage = () => {
   // Fetch foods data
   const fetchFoods = async () => {
     try {
-      const response = await fetch(`http://localhost:8000/api/food`);
+      const response = await fetch(
+        `https://backend-of-food-delivery.onrender.com/api/food`
+      );
       const data = await response.json();
       setFoods(data.data); // Set only the array part of the response
     } catch (error) {
