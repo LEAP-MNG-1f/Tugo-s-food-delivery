@@ -1,4 +1,4 @@
-import { Food } from "../model/food.js";
+import { Food } from "../model/Food.js";
 
 const createFood = async (request, response) => {
   const result = await Food.create({
