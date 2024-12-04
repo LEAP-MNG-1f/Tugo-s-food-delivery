@@ -28,7 +28,7 @@ export const Food = (props: FoodProps) => {
   const fetchFoods = async () => {
     try {
       const response = await fetch(
-        `${process.env.REACT_PUBLIC_DATABASE_URL}/food`
+        `https://backend-of-food-delivery.onrender.com/api/food`
       );
       const data = await response.json();
       // Filter foods by category and limit to 4 items
