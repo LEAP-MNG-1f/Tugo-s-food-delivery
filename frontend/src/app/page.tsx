@@ -8,8 +8,12 @@ export default function Home() {
       <HomeNuurZurag />
       <BusinessInfo />
       <div className="flex flex-col gap-10 py-10">
-        <Food title="Pizza" router="menu" />
-        <Food title="Burger" router="menu" />
+        <Food title="Pizza" router="menu" category="674ecef31b8cb31c6d5677ce" />
+        <Food
+          title="Burger"
+          router="menu"
+          category="674ec5e46ec8968c3373621b"
+        />
       </div>
     </main>
   );

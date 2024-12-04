@@ -1,3 +1,5 @@
+import { styleText } from "util";
+
 /** @type {import('postcss-load-config').Config} */
 const config = {
   plugins: {

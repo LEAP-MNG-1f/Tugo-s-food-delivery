@@ -51,7 +51,7 @@ export const FoodCard = ({ foods }: FoodCardProps) => {
       ) : (
         <div className="flex gap-10">
           {skeletonArray.map((_, index) => (
-            <div key={index} className="flex w-[470px] flex-col gap-4">
+            <div key={index} className="flex flex-col gap-4">
               <div className="skeleton h-[300px] w-full"></div>
               <div className="skeleton h-4 w-20"></div>
               <div className="skeleton h-4 w-20"></div>
