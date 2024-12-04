@@ -13,7 +13,7 @@ export const MenuPage = () => {
   const fetchCategories = async () => {
     try {
       const response = await fetch(
-        `https://backend-of-food-delivery.onrender.com/api/categories`
+        `${process.env.REACT_PUBLIC_DATABASE_URL}/categories`
       );
       const data = await response.json();
       setCategory(data.data); // Set only the array part of the response
@@ -26,7 +26,7 @@ export const MenuPage = () => {
   const fetchFoods = async () => {
     try {
       const response = await fetch(
-        `https://backend-of-food-delivery.onrender.com/api/food`
+        `${process.env.REACT_PUBLIC_DATABASE_URL}/food`
       );
       const data = await response.json();
       setFoods(data.data); // Set only the array part of the response

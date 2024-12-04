@@ -17,7 +17,7 @@ export const AddCategory = () => {
   const fetchFoods = async () => {
     try {
       const response = await fetch(
-        `https://backend-of-food-delivery.onrender.com/api/food`
+        `${process.env.REACT_PUBLIC_DATABASE_URL}/food`
       );
       const data = await response.json();
       setFoods(data.data);
@@ -29,7 +29,7 @@ export const AddCategory = () => {
   const fetchCategories = async () => {
     try {
       const response = await fetch(
-        `https://backend-of-food-delivery.onrender.com/api/categories`
+        `${process.env.REACT_PUBLIC_DATABASE_URL}/categories`
       );
       const data = await response.json();
       setCategory(data.data);
