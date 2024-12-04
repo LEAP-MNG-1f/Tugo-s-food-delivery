@@ -97,8 +97,8 @@ export const Food = (props: FoodProps) => {
       </div>
 
       {selectedFood && (
-        <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-50">
-          <div className="bg-white p-6 rounded-lg shadow-lg relative">
+        <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center">
+          <div className="w-[1200px] h-[600px] bg-white p-6 rounded-lg shadow-lg relative">
             <div className="grid grid-cols-2 gap-10">
               <img
                 className="w-[600] rounded-2xl"
@@ -108,7 +108,7 @@ export const Food = (props: FoodProps) => {
               <div className="flex flex-col justify-between py-20">
                 <button
                   onClick={handleCloseModal}
-                  className="absolute top-2 right-2 text-black font-bold text-2xl"
+                  className="absolute top-5 right-5 text-black font-bold text-2xl"
                 >
                   ×
                 </button>
