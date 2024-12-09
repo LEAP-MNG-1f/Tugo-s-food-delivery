@@ -10,7 +10,7 @@ export const Footer = () => {
         backgroundSize: "cover",
       }}
     >
-      <div className="flex flex-col items-center justify-center mt-[100px] gap-10 z-10">
+      <div className="flex flex-col items-center justify-center mt-[100px] gap-10">
         <div className="flex items-center gap-3">
           <img width={50} src="./pineconeLogoWhite.png" alt="" />
           <div className=" font-bold text-2xl">Food Delivery</div>
